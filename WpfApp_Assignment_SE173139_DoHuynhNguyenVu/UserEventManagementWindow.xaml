@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfApp_Assignment_SE173139_DoHuynhNguyenVu.UserEventManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Assignment_SE173139_DoHuynhNguyenVu"
+        mc:Ignorable="d"
+        Title="User Event Management" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="txtUsername_Copy" 
+               Content="User Event Management" 
+               HorizontalAlignment="Left" 
+               Margin="10,10,0,0" 
+               VerticalAlignment="Top" 
+               FontSize="24" 
+               FontWeight="Bold" 
+               Foreground="#FF9A254B" 
+               Grid.ColumnSpan="2"/>
+
+        <DataGrid x:Name="dgUserEvent" 
+                  AutoGenerateColumns="False" 
+                  HorizontalAlignment="Stretch" 
+                  Margin="10" 
+                  VerticalAlignment="Top" 
+                  SelectionChanged="dgUserEvent_SelectionChanged" 
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding UserEventId}" Width="50" />
+                <DataGridTextColumn Header="Username" Binding="{Binding User.UserName}" Width="160" />
+                <DataGridTextColumn Header="Name" Binding="{Binding User.Name}" Width="*" />
+                <DataGridTemplateColumn Header="Image" Width="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Event.ImageUrl}" Width="60" Height="60" Stretch="Uniform"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Event Name" Binding="{Binding Event.EventName}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="10">
+            <Button x:Name="btnAssign" 
+                    Content="Assign" 
+                    Height="40" 
+                    Width="96" 
+                    Background="#FF6A5ACD" 
+                    Foreground="White" 
+                    Cursor="Hand" 
+                    Click="btnAssign_Click"/>
+            <Button x:Name="btnDelete" 
+                    Content="Delete" 
+                    Height="40" 
+                    Width="96" 
+                    Background="#FFE23737" 
+                    Foreground="White" 
+                    Cursor="Hand" 
+                    Click="btnDelete_Click"
+                    Margin="5,0,0,0"/>
+            <Button x:Name="btnMenu" 
+                    Content="Menu" 
+                    Height="40" 
+                    Width="96" 
+                    Background="#fac122" 
+                    Foreground="#FF333333" 
+                    Cursor="Hand" 
+                    Click="btnMenu_Click"
+                    Margin="5,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

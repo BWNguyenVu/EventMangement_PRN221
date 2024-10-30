@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfApp_Assignment_SE173139_DoHuynhNguyenVu.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Menu" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="#EFEFEF">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Background="White" Margin="20" Grid.Row="0">
+            <Border CornerRadius="20" Background="White" Padding="20" BorderBrush="#EEEEEE" BorderThickness="1">
+                <TextBlock Text="Menu" FontSize="26" FontWeight="Bold" Foreground="#333" TextAlignment="Center" 
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Margin="0,10,0,10">
+            <Button Content="User Management" Height="45" Margin="0,5" Click="BtnUserManagement_Click" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2196F3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="Event Management" Height="45" Margin="0,5" Click="BtnClassManagement_Click" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF6A5ACD"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="User Event Management" Height="45" Margin="0,5" Click="btnAssignStudentToClass_Click" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF7043"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="Exit" Height="45" Margin="0,5" Click="BtnExit_Click" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#F44336"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
